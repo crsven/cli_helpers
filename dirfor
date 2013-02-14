@@ -1,14 +1,16 @@
 #!/bin/bash
-# ps axc for process
+# Dirfor:
+# Ouput directories in use, with PIDs for a given process name.
+# Useful when a process has gone out of control and you need to
+# kill it, but are not sure of the PID.
+#
+# Usage:
+# dirfor ruby
+# dirfor vim
+#
 ps axc |
-
-# awk for PID & name
 awk "/$1/"'{print  $1}' |
-
-# lfof -pf for PIDs files
 xargs -L1 lsof -p |
-
-# awk for output
 awk '/DIR/ { pids[$2] = $NF }
      END {
            for (pid in pids)
