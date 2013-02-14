@@ -1,0 +1,6 @@
+#!/bin/bash
+# ps axc for process
+# grep ** for process
+# awk for PID & name
+# lfof -pf for PIDs files
+# awk for output
