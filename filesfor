@@ -1,6 +1,11 @@
 #!/bin/bash
 # ps axc for process
+ps axc |
+
 # grep ** for process
+grep $1 |
+
 # awk for PID & name
+awk '{print  $1}'
 # lfof -pf for PIDs files
 # awk for output
