@@ -1,4 +1,6 @@
 #!/bin/bash
+# Opens any modified and git-tracked files in Vim
+
 git st |
 awk 'match($1, /M/) { print $2 }' |
 xargs -o vim -p
