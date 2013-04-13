@@ -1,0 +1,4 @@
+#!/bin/bash
+git st |
+awk 'match($1, /M/) { print $2 }' |
+xargs -o vim -p
