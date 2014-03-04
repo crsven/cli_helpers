@@ -13,3 +13,10 @@ Will open all currently modified files in your repo in Vim.
 trash-git-st  
 Usage: `trash-git-st` (from within a git repo)  
 Removes all directories and files listed by `git st`.
+
+git-save
+
+Usage: `git save <new branch name>` (from within a git repo)
+
+Save the current state of your changes to a new branch names <new branch
+name>-STASH. Used as a more visible replacement to `git stash`.

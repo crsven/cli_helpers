@@ -1,0 +1,11 @@
+#!/bin/bash
+if [ "${1}" != "" ]; then
+  echo "Stashing changes into new branch ${1}"
+  git co -b $1-STASH &&
+  git add -A &&
+  git commit -a -m "wip - stashed `date`" &&
+  git co -
+else
+  echo "git save requires a branch name to be passed"
+  echo "example: git save my-branch"
+fi
