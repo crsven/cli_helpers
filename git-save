@@ -1,11 +1,21 @@
 #!/bin/bash
-if [ "${1}" != "" ]; then
+stash_changes()
+{
   echo "Stashing changes into new branch ${1}"
-  git checkout -b $1-STASH &&
+  git checkout -b $BRANCHNAME &&
   git add -A &&
-  git commit -a -m "wip - stashed `date`" &&
+  git commit -a -m "wip - stashed $DATE" &&
   git checkout -
+}
+
+if [ "${1}" = "show" ]; then
+  echo "showing"
 else
-  echo "git save requires a branch name to be passed"
-  echo "example: git save my-branch"
+  DATE=`date +"%d-%m-%Y-%H-%M-%S"`
+  if [ "${1}" != "" ]; then
+    BRANCHNAME=STASH-$1-$DATE
+  elif [ "${1}" = "" ]; then
+    BRANCHNAME=STASH-$DATE
+  fi
+  stash_changes
 fi
