@@ -22,9 +22,9 @@ if [ "${1}" = "clear" ]; then
   clear_stash_branches
 else
   DATE=`date +"%d-%m-%Y-%H-%M-%S"`
-  BRANCHNAME=STASH-$DATE
+  BRANCHNAME=STASH/$DATE
   if [ "${1}" != "" ]; then
-    BRANCHNAME=STASH-$1-$DATE
+    BRANCHNAME=STASH/$1-$DATE
   fi
   stash_changes
 fi
