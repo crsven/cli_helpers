@@ -6,7 +6,7 @@ STATUS="$?"
 
 curl -s \
   -o "/dev/null" \
-  -F "token=$PUSHOVER_API_KEY" \
-  -F "user=$PUSHOVER_USER_KEY" \
+  -F "token=$REPORTER_PUSHOVER_API_KEY" \
+  -F "user=$REPORTER_PUSHOVER_USER_KEY" \
   -F "message=Command '$COMMAND' has completed with status $STATUS" \
   https://api.pushover.net/1/messages.json
