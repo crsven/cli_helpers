@@ -26,3 +26,17 @@ git save clear //removes all stash branches
 
 Save the current state of your changes to a new branch names STASH-<new branch
 name>-<timestamp>. Used as a more visible replacement to `git stash`.
+
+reporter
+Usage:
+```
+reporter echo 'hey'
+```
+
+Reporter will send a notification via [Pushover](pushover.net) when the given
+command has completed. Useful for leaving your desk during long-running
+commands.
+
+Required environment variables:
+1) PUSHOVER_API_KEY: your app's API key
+2) PUSHOVER_USER_KEY: the recipient's Pushover key
