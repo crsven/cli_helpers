@@ -37,5 +37,12 @@ command has completed. Useful for leaving your desk during long-running
 commands.
 
 Required environment variables:  
-* PUSHOVER_API_KEY: Your app's API key
-* PUSHOVER_USER_KEY: The recipient's Pushover key
+  * PUSHOVER_API_KEY: Your app's API key
+  * PUSHOVER_USER_KEY: The recipient's Pushover key  
+
+##mant
+Usage:
+```
+mant find
+```
+Mant will load the man page for `find` in a horizontal TMUX split.
