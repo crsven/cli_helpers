@@ -1,0 +1,10 @@
+#!/bin/bash
+tmux split-window -p 50 -h
+PANE=`tmux display -p "#I.#P"`
+
+MAN="man"
+COMMAND=$1
+tmux send-keys -t $PANE $MAN
+tmux send-keys -t $PANE " "
+tmux send-keys -t $PANE $COMMAND
+tmux send-keys -t $PANE "Enter"
